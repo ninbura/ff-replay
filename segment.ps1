@@ -49,15 +49,9 @@ function startProcesses($processInfo) {
 }
 
 function killProcesses($process, $relativePath) {
-  # $counter = 0
   $WaitForKey = Start-Process powershell -ArgumentList "-ExecutionPolicy Bypass & \`"$relativePath\wait-for-key.ps1\`"" -NoNewWindow -PassThru
 
-  # foreach($key in $process.Keys){
-  #     Clear-Content -Path "$relativePath\Logs\$key.txt" -Force
-  # }
-
   while (!$WaitForKey.HasExited) {
-    # while (!$WaitForKey.HasExited -or $counter -lt 50) {
     $table = @()
 
     foreach ($key in $process.Keys) {
@@ -69,8 +63,6 @@ function killProcesses($process, $relativePath) {
       }
 
       $table += [PSCustomObject]$statObject
-            
-      # Add-Content -Path "$relativePath\Logs\$key.txt" -Value $process.$key.StandardError.ReadLine() -Force
     }
 
     Clear-Host
@@ -80,15 +72,6 @@ function killProcesses($process, $relativePath) {
     foreach ($line in $printTable) {
       Write-Host $line -ForegroundColor Cyan
     }
-
-    # if($WaitForKey.HasExited){
-    #     if($counter -eq 0){
-    #         foreach($key in $process.Keys){
-    #             $process.$key.StandardInput.WriteLine("q");
-    #         }
-    #     }
-    #     $counter += 1
-    # }
   }
 
   foreach ($key in $process.Keys) {
@@ -145,13 +128,19 @@ function deleteSegments ($commands) {
   }
 }
 
-Clear-Host
-$relativePath = setRelativePath
-$config = Get-Content -Path "$relativePath\config\$configName.json" | ConvertFrom-Json
-deleteSegments $config.commands
-$processInfo = createProcessInfo $config.commands
-$process = startProcesses $processInfo
-killProcesses $process $relativePath
-Write-Host "`nCaught F16, ending recording...`n" -ForegroundColor Green
-deleteSegments $config.commands
-quit
+try {
+  Clear-Host
+  $relativePath = setRelativePath
+  $config = Get-Content -Path "$relativePath\config\$configName.json" | ConvertFrom-Json
+  deleteSegments $config.commands
+  $processInfo = createProcessInfo $config.commands
+  $process = startProcesses $processInfo
+  killProcesses $process $relativePath
+  Write-Host "`nCaught F16, ending recording...`n" -ForegroundColor Green
+  deleteSegments $config.commands
+  quit
+} catch {
+  Write-Host "An error occurred:" -ForegroundColor red
+  Write-Host $_ -ForegroundColor red
+  quit
+}

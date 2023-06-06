@@ -90,7 +90,7 @@ function getSegmentPlaylists ($commands, $playlistParentPath) {
     }
 
     $segmentPlaylists[$i].RemoveRange(0, $endex)
-    $recordingStopped = "#EXT-X-ENDLIST" -in $segmentPlaylists[$i] ? $true : $false
+    # $recordingStopped = "#EXT-X-ENDLIST" -in $segmentPlaylists[$i] ? $true : $false
     $segmentPlaylists[$i].Remove("#EXT-X-ENDLIST")
 
     # if(!$recordingStopped) {
@@ -602,21 +602,37 @@ function verifyOutputFileCreation ($outputFiles) {
   Write-Host ""
 }
 
-Clear-Host
-printSystemMessages
-$relativePath = setRelativePath
-$config = getConfig $relativePath $configName
-$segmentDetails = getSegmentDetails $config.commands
-$segmentPlaylists = getSegmentPlaylists $config.commands $segmentDetails.segmentPath $bufferedTimestamp $segmentDetails.segmentDuration
-$bufferedTimestamp = getBufferedTimestamp $segmentDetails $config.replayOptions.segmentBuffer
-$userParameters = getUserParameters $bufferedTimestamp $config
-$segmentPlaylists = formatSegmentPlaylists $userParameters $bufferedTimestamp $segmentPlaylists $segmentDetails.segmentDuration
-buildTempPlaylists $segmentDetails.segmentPath $segmentPlaylists
-$finalOutputDirectory = createOutputDirectory $segmentPlaylists.Count $config.replayOptions.outputDirectory $userParameters.outputFileName
-$commandDetails = generateCommandDetails $segmentDetails.segmentPath $segmentPlaylists $finalOutputDirectory $userParameters.outputFileName
-runFFmpegCommands $segmentDetails.segmentPath $userParameters.videoStreams $commandDetails.argumentLists
-verifyOutputFileCreation $commandDetails.outputFiles
+function quitOrBypass(){
+  if($bypassQuit.ToLower() -eq "n"){
+    quit
+  } else {
+    Write-Host "Process completed, program will automatically close in 10 seconds..."
+    Start-Sleep 10
+    exit
+  }
+}
 
-if($bypassQuit.ToLower() -eq "n"){
+try {
+  Clear-Host
+  printSystemMessages
+  $relativePath = setRelativePath
+  $config = getConfig $relativePath $configName
+  $segmentDetails = getSegmentDetails $config.commands
+  $segmentPlaylists = getSegmentPlaylists $config.commands $segmentDetails.segmentPath $bufferedTimestamp $segmentDetails.segmentDuration
+  $bufferedTimestamp = getBufferedTimestamp $segmentDetails $config.replayOptions.segmentBuffer
+  $userParameters = getUserParameters $bufferedTimestamp $config
+  $segmentPlaylists = formatSegmentPlaylists $userParameters $bufferedTimestamp $segmentPlaylists $segmentDetails.segmentDuration
+  buildTempPlaylists $segmentDetails.segmentPath $segmentPlaylists
+  $finalOutputDirectory = createOutputDirectory $segmentPlaylists.Count $config.replayOptions.outputDirectory $userParameters.outputFileName
+  $commandDetails = generateCommandDetails $segmentDetails.segmentPath $segmentPlaylists $finalOutputDirectory $userParameters.outputFileName
+  runFFmpegCommands $segmentDetails.segmentPath $userParameters.videoStreams $commandDetails.argumentLists
+  verifyOutputFileCreation $commandDetails.outputFiles
+  quitOrBypass
+} catch {
+  Write-Host "An error occurred:" -ForegroundColor red
+  Write-Host $_ -ForegroundColor red
   quit
 }
+
+
+
