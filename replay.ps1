@@ -633,6 +633,3 @@ try {
   Write-Host $_ -ForegroundColor red
   quit
 }
-
-
-
