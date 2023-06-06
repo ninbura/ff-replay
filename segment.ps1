@@ -1,5 +1,5 @@
 param(
-  [string]$relativePath = "C:\repositories\ff-replay",
+  [string]$relativePath = "C:/repositories/ff-replay",
   [string]$configName = "all"
 )
 
