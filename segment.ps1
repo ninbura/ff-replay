@@ -138,6 +138,7 @@ try {
   killProcesses $process $relativePath
   Write-Host "`nCaught F16, ending recording...`n" -ForegroundColor Green
   deleteSegments $config.commands
+  quit
 } catch {
   Write-Host "An error occurred:" -ForegroundColor red
   Write-Host $_ -ForegroundColor red
