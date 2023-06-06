@@ -1,0 +1,1 @@
+"C:\Program Files\PowerShell\7\pwsh.exe" -ExecutionPolicy bypass -WindowStyle normal -file "C:\repositories\ff-replay\segment.ps1" -configName all

@@ -1,4 +1,5 @@
 param(
+  [string]$relativePath = "C:\repositories\ff-replay",
   [string]$configName = "",
   [string]$outputOverride = "",
   [string]$videoStreams = "",
@@ -19,9 +20,6 @@ function printSystemMessages () {
 function setRelativePath {
   if ($PSScriptRoot -ne "") {
     $relativePath = $PSScriptRoot
-  }
-  else {
-    $relativePath = "C:\drive\programming\production\powershell\ffmpeg\ff-suite\ff-replay"
   }
 
   return $relativePath
