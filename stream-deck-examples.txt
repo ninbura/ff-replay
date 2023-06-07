@@ -1,22 +1,29 @@
 wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\repositories\ff-replay\segment.ps1" -configName all -bypassQuit y
-
 wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\repositories\ff-replay\segment.ps1" -configName obs -bypassQuit y
-
 wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\repositories\ff-replay\segment.ps1" -configName primary -bypassQuit y
-
 wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\repositories\ff-replay\segment.ps1" -configName secondary -bypassQuit y
-
 wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\repositories\ff-replay\segment.ps1" -configName camera -bypassQuit y
 
+wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\repositories\ff-replay\replay.ps1" -configName all -bypassQuit y
+wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\repositories\ff-replay\replay.ps1" -configName obs -bypassQuit y
+wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\repositories\ff-replay\replay.ps1" -configName primary -bypassQuit y
+wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\repositories\ff-replay\replay.ps1" -configName secondary -bypassQuit y
+wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\repositories\ff-replay\replay.ps1" -configName camera -bypassQuit y
 
-wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\repositories\ff-replay\replay.ps1" -configName all -videoStreams "1,2,3,4" -startTime 5 -ignoreStartBounds y -replayduration 5 -ignoreEndBounds y -outputFilename replay -bypassQuit y
+wt pwsh -ExecutionPolicy bypass -WindowStyle minimized -file "C:\repositories\ff-replay\replay.ps1" -configName all -videoStreams "1,2,3,4" -startTime 1 -ignoreStartBounds y -replayduration 1 -ignoreEndBounds y -outputFilename replay -bypassQuit y
+wt pwsh -ExecutionPolicy bypass -WindowStyle minimized -file "C:\repositories\ff-replay\replay.ps1" -configName all -videoStreams "1,2,3,4" -startTime 5 -ignoreStartBounds y -replayduration 5 -ignoreEndBounds y -outputFilename replay -bypassQuit y
 
-wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\repositories\ff-replay\replay.ps1" -configName all -videoStreams "2,3" -startTime 5 -ignoreStartBounds y -replayduration 5 -ignoreEndBounds y -outputFilename replay -bypassQuit y
+wt pwsh -ExecutionPolicy bypass -WindowStyle minimized -file "C:\repositories\ff-replay\replay.ps1" -configName all -videoStreams "2,3" -startTime 1 -ignoreStartBounds y -replayduration 1 -ignoreEndBounds y -outputFilename replay -bypassQuit y
+wt pwsh -ExecutionPolicy bypass -WindowStyle minimized -file "C:\repositories\ff-replay\replay.ps1" -configName all -videoStreams "2,3" -startTime 5 -ignoreStartBounds y -replayduration 5 -ignoreEndBounds y -outputFilename replay -bypassQuit y
 
-wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\repositories\ff-replay\replay.ps1" -configName obs -startTime 5 -ignoreStartBounds y -replayduration 5 -ignoreEndBounds y -outputFilename replay -bypassQuit y
+wt pwsh -ExecutionPolicy bypass -WindowStyle minimized -file "C:\repositories\ff-replay\replay.ps1" -configName obs -startTime 1 -ignoreStartBounds y -replayduration 1 -ignoreEndBounds y -outputFilename replay -bypassQuit y
+wt pwsh -ExecutionPolicy bypass -WindowStyle minimized -file "C:\repositories\ff-replay\replay.ps1" -configName obs -startTime 5 -ignoreStartBounds y -replayduration 5 -ignoreEndBounds y -outputFilename replay -bypassQuit y
 
-wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\repositories\ff-replay\replay.ps1" -configName primary -startTime 5 -ignoreStartBounds y -replayduration 5 -ignoreEndBounds y -outputFilename replay -bypassQuit y
+wt pwsh -ExecutionPolicy bypass -WindowStyle minimized -file "C:\repositories\ff-replay\replay.ps1" -configName primary -startTime 1 -ignoreStartBounds y -replayduration 1 -ignoreEndBounds y -outputFilename replay -bypassQuit y
+wt pwsh -ExecutionPolicy bypass -WindowStyle minimized -file "C:\repositories\ff-replay\replay.ps1" -configName primary -startTime 5 -ignoreStartBounds y -replayduration 5 -ignoreEndBounds y -outputFilename replay -bypassQuit y
 
-wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\repositories\ff-replay\replay.ps1" -configName secondary -startTime 5 -ignoreStartBounds y -replayduration 5 -ignoreEndBounds y -outputFilename replay -bypassQuit y
+wt pwsh -ExecutionPolicy bypass -WindowStyle minimized -file "C:\repositories\ff-replay\replay.ps1" -configName secondary -startTime 1 -ignoreStartBounds y -replayduration 1 -ignoreEndBounds y -outputFilename replay -bypassQuit y
+wt pwsh -ExecutionPolicy bypass -WindowStyle minimized -file "C:\repositories\ff-replay\replay.ps1" -configName secondary -startTime 5 -ignoreStartBounds y -replayduration 5 -ignoreEndBounds y -outputFilename replay -bypassQuit y
 
-wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\repositories\ff-replay\replay.ps1" -configName camera -startTime 5 -ignoreStartBounds y -replayduration 5 -ignoreEndBounds y -outputFilename replay -bypassQuit y
+wt pwsh -ExecutionPolicy bypass -WindowStyle minimized -file "C:\repositories\ff-replay\replay.ps1" -configName camera -startTime 1 -ignoreStartBounds y -replayduration 1 -ignoreEndBounds y -outputFilename replay -bypassQuit y
+wt pwsh -ExecutionPolicy bypass -WindowStyle minimized -file "C:\repositories\ff-replay\replay.ps1" -configName camera -startTime 5 -ignoreStartBounds y -replayduration 5 -ignoreEndBounds y -outputFilename replay -bypassQuit y
