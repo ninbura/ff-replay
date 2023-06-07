@@ -8,7 +8,7 @@ param(
   [string]$replayDuration = "",
   [string]$ignoreEndBounds = "",
   [string]$outputFilename = "",
-  [string]$bypassQuit = ""
+  [string]$bypassQuit = "y"
 )
 
 function printSystemMessages () {

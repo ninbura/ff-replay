@@ -1,6 +1,7 @@
 param(
   [string]$relativePath = "C:/repositories/ff-replay",
-  [string]$configName = "all"
+  [string]$configName = "all",
+  [string]$bypassQuit = "y"
 )
 
 function quit() {
@@ -126,6 +127,16 @@ function deleteSegments ($commands) {
   }
 }
 
+function quitOrBypass(){
+  if($bypassQuit.ToLower() -eq "n"){
+    quit
+  } else {
+    Write-Host "Process completed, program will automatically close in 10 seconds..."
+    Start-Sleep 10
+    exit
+  }
+}
+
 try {
   Clear-Host
   $relativePath = setRelativePath
@@ -136,7 +147,7 @@ try {
   killProcesses $process $relativePath
   Write-Host "`nCaught F16, ending recording...`n" -ForegroundColor Green
   deleteSegments $config.commands
-  quit
+  quitOrBypass
 } catch {
   Write-Host "An error occurred:" -ForegroundColor red
   Write-Host $_ -ForegroundColor red
