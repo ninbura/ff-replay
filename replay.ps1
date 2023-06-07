@@ -514,9 +514,16 @@ function formatSegmentPlaylists($userParameters, $bufferedTimestamp, $segmentPla
     $newSegmentPlaylists.$videoStream = $segmentPlaylists.$videoStream
   }
 
+  $playlistLengths = @()
+
   for ($i = 0; $i -lt $newSegmentPlaylists.Count; $i++) {
     $relevantPlaylist = $newSegmentPlaylists[$i]
     $startingSegmentIndex = $relevantPlaylist.Count + 1 - ($segmentsFromEnd * 2)
+
+    if($startingSegmentIndex -lt 1) {
+      $startingSegmentIndex = 1
+    }
+
     $rawStartingSegment = $relevantPlaylist[$startingSegmentIndex]
     $startingSegment = [regex]::match($rawStartingSegment, "[0-9]+").Value
     $relevantKey = ([array]$newSegmentPlaylists.Keys)[$i]
@@ -525,11 +532,27 @@ function formatSegmentPlaylists($userParameters, $bufferedTimestamp, $segmentPla
 
     [System.Collections.ArrayList]$newSegmentPlaylists[$i] = $relevantPlaylist[$startDex.. $endex]
 
-    $newSegmentPlaylists[$i].insert(
+    $playlistLengths += $newSegmentPlaylists[$i].Count
+  }
+
+  $playlistLengths = $playlistLengths | Sort-Object
+  $shortestPlaylist = $playlistLengths[0]
+
+  for ($i = 0; $i -lt $newSegmentPlaylists.Count; $i++) {
+    $relevantPlaylist = $newSegmentPlaylists[$i]
+    $relevantKey = ([array]$newSegmentPlaylists.Keys)[$i]
+    $playlistLength = $relevantPlaylist.Count
+    $itemsToRemove = $playlistLength - $shortestPlaylist
+
+    if($itemsToRemove -gt 0){
+      $relevantPlaylist.RemoveRange(0, $itemsToRemove)
+    }
+    
+    $relevantPlaylist.insert(
       0, 
       @("#EXTM3U", "#EXT-X-VERSION:7", "#EXT-X-TARGETDURATION:$segmentDuration", "#EXT-X-MEDIA-SEQUENCE:$startingSegment", "#EXT-X-MAP:URI=`"$relevantKey.mp4`"")
     )
-    $newSegmentPlaylists[$i].add("#EXT-X-ENDLIST") | Out-Null
+    $relevantPlaylist.add("#EXT-X-ENDLIST") | Out-Null
   }
   
   return $newSegmentPlaylists
