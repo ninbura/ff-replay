@@ -47,7 +47,7 @@ function startProcesses($processInfo) {
 }
 
 function killProcesses($process, $relativePath) {
-  $WaitForKey = Start-Process powershell -ArgumentList "-ExecutionPolicy Bypass & \`"$relativePath\wait-for-key.ps1\`"" -NoNewWindow -PassThru
+  $WaitForKey = Start-Process powershell "$relativePath\wait-for-key.ps1" -NoNewWindow -PassThru
 
   while (!$WaitForKey.HasExited) {
     $table = @()
