@@ -143,6 +143,7 @@ try {
   $config = Get-Content -Path "$relativePath\config\$configName.json" | ConvertFrom-Json
   deleteSegments $config.commands
   $processInfo = createProcessInfo $config.commands
+  Write-Host "Starting recording..."
   $process = startProcesses $processInfo
   killProcesses $process $relativePath
   Write-Host "`nCaught F16, ending recording...`n" -ForegroundColor Green
