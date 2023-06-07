@@ -4,9 +4,11 @@ param(
   [string]$outputOverride = "",
   [string]$videoStreams = "",
   [string]$startTime = "",
+  [string]$ignoreStartBounds = "",
   [string]$replayDuration = "",
+  [string]$ignoreEndBounds = "",
   [string]$outputFilename = "",
-  [string]$bypassQuit = "n"
+  [string]$bypassQuit = ""
 )
 
 function printSystemMessages () {
@@ -222,11 +224,22 @@ function validateStartBounds($startTime, $bufferedTimestamp){
   $bufferedDuration = convertTimestamp $bufferedTimestamp
 
   if(
-    $startDuration -lt $bufferedDuration -and
+    $startDuration -le $bufferedDuration -and
     $startDuration -gt 0
   ) {
     return $true
-  } else {
+  } elseIf($startDuration -gt $bufferedDuration) {
+    if($ignoreStartBounds.ToLower() -ne "y"){
+      $ignoreStartBounds = Read-Host "You entered a start time greater than the buffer, would you like to start at the beginning of the buffer? (y/n)"
+    }
+
+    if($ignoreStartBounds.ToLower() -eq "y") {
+      return $true
+    } else {
+      return $false
+    }
+  }
+  else {
     return $false
   }
 }
@@ -276,7 +289,12 @@ function getstartTime($bufferedTimestamp) {
     } else {
       $bufferedDuration = convertTimestamp $bufferedTimestamp
       $startDuration = convertTimestamp $userInput
-      $durationFromEnd = $bufferedDuration - $startDuration
+
+      if($startDuration -lt $bufferedDuration){
+        $durationFromEnd = $bufferedDuration - $startDuration
+      } else {
+        $durationFromEnd = 0
+      }
       $startTime = (convertDuration $durationFromEnd).long
 
       break
@@ -303,12 +321,24 @@ function validateEndBounds($replayDuration, $startTime, $bufferedTimestamp){
     $_replayDuration -le $remainingBuffer
   ) {
     return $true
-  } else {
+  } elseIf($_replayDuration -gt $remainingBuffer){
+    if($ignoreEndBounds.ToLower() -ne "y"){
+      $ignoreEndBounds = Read-Host "You entered a replay duration greater than the buffer, would you like to go to the end of the buffer? (y/n)"
+    }
+
+    if($ignoreEndBounds.ToLower() -eq "y") {
+      return $true
+    } else {
+      Write-Host "made it"
+      return $false
+    }
+  }
+  else {
     return $false
   }
 }
 
-function getreplayDuration($startTime, $bufferedTimestamp) {
+function getReplayDuration($startTime, $bufferedTimestamp) {
   if((convertTimestamp $bufferedTimestamp) -lt 60) {
     return $bufferedTimestamp
   } else {
@@ -325,7 +355,7 @@ function getreplayDuration($startTime, $bufferedTimestamp) {
       $userInput = $replayDuration
       $replayDurationTimestamp = (convertDuration(convertTimestamp $userInput)).long
 
-      Write-Host "Start time has been pre-set to $replayDurationTimestamp (hh:mm:ss) via your parameters." -ForegroundColor Blue
+      Write-Host "Replay duration has been pre-set to $replayDurationTimestamp (hh:mm:ss) via your parameters." -ForegroundColor Blue
     } else {
       Write-Host "If left blank, replay duration will go to the end of the buffer."
       $userInput = Read-Host -Prompt "Please enter replay duration, (hour:minute) [ex: 1:35, 5], or `"b`" to go back"
@@ -350,7 +380,13 @@ function getreplayDuration($startTime, $bufferedTimestamp) {
 
       $replayDuration = ""
     } else {
-      $replayDuration = (convertDuration (convertTimestamp $userInput)).long
+      $inputDuration = convertTimestamp $userInput
+
+      if($inputDuration -gt $remainingBuffer){
+        $inputDuration = $remainingBuffer
+      }
+
+      $replayDuration = (convertDuration $inputDuration).long
 
       break
     }
@@ -429,7 +465,7 @@ function getUserParameters($bufferedTimestamp, $config) {
 
     # get replay duration
     if($null -eq $userParameters.replayDuration){
-      $userInput = getreplayDuration $userParameters.startTime $bufferedTimestamp
+      $userInput = getReplayDuration $userParameters.startTime $bufferedTimestamp
 
       if($userInput.ToLower() -eq "b") {
         $userParameters.startTime = $null
