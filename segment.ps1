@@ -1,7 +1,8 @@
 param(
   [string]$relativePath = "C:/repositories/ff-replay",
   [string]$configName = "all",
-  [string]$bypassQuit = "y"
+  [string]$bypassQuit = "y",
+  [int]$startDelay = 0
 )
 
 function quit() {
@@ -42,6 +43,8 @@ function startProcesses($processInfo) {
 
   foreach ($key in $processInfo.Keys) {
     $process.$key = [System.Diagnostics.Process]::Start($processInfo.$key);
+
+    Start-Sleep $startDelay
   }
 
   return $process
