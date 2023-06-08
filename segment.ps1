@@ -44,7 +44,7 @@ function startProcesses($processInfo) {
   foreach ($key in $processInfo.Keys) {
     $process.$key = [System.Diagnostics.Process]::Start($processInfo.$key);
 
-    Start-Sleep $startDelay
+    Start-Sleep -Milliseconds $startDelay
   }
 
   return $process
