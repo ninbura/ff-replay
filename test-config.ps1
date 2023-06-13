@@ -1,5 +1,5 @@
 param(
-  $configName = "primary",
+  $configName = "all",
   $commandName = "b_primary"
 )
 
@@ -8,7 +8,7 @@ function SetRelativePath {
     $relativePath = $PSScriptRoot
   }
   else {
-    $relativePath = "C:\drive\programming\production\powershell\ffmpeg\ff-suite\ff-replay"
+    $relativePath = "C:\repositories\ff-replay"
   }
 
   return $relativePath

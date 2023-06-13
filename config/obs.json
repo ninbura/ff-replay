@@ -1,6 +1,6 @@
 {
   "replayOptions": {
-    "segmentBuffer": 900,
+    "segmentBuffer": 1800,
     "outputDirectory": "//192.168.3.5/a-sexy-renderer/users/gabri/Videos/ffmpeg/replays"
   },
   "commands": {
@@ -45,7 +45,7 @@
       "-gpu",
       "1",
       "-preset",
-      "p1",
+      "p7",
       "-pix_fmt",
       "nv12",
       "-r",
@@ -59,7 +59,7 @@
       "-rc:v",
       "vbr",
       "-cq:v",
-      "17",
+      "18",
       "-vf",
       "\"setpts=PTS-STARTPTS,tpad=start_duration=0.183\"",
       "-bsf:v",
@@ -95,7 +95,7 @@
       "-hls_time",
       "2",
       "-hls_list_size",
-      "4500",
+      "12600",
       "-hls_segment_filename",
       "\"//192.168.3.4/a-sexy-q-drive/ffmpeg/segments/a_obs%01d.mp4\"",
       "\"//192.168.3.4/a-sexy-q-drive/ffmpeg/segments/a_obs.m3u8\""
