@@ -17,7 +17,7 @@
       "-rtbufsize",
       "2147.48M",
       "-video_size",
-      "2560x1440",
+      "3840x2160",
       "-framerate",
       "60",
       "-pixel_format",
