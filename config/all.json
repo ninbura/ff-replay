@@ -344,7 +344,7 @@
       "-pixel_format",
       "nv12",
       "-i",
-      "video=\"Game Capture 4K60 Pro MK.2 (2)\":audio=\"MADI (191+192) (RME HDSPe MADI FX)\"",
+      "video=\"Game Capture 4K60 Pro MK.2 (2)\":audio=\"MADI (189+190) (RME HDSPe MADI FX)\"",
       "-guess_layout_max",
       "0",
       "-thread_queue_size",

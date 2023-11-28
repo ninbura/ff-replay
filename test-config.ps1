@@ -8,7 +8,7 @@ function SetRelativePath {
     $relativePath = $PSScriptRoot
   }
   else {
-    $relativePath = "C:\repositories\ff-replay"
+    $relativePath = "C:\repos\ff-replay"
   }
 
   return $relativePath
