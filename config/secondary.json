@@ -1,7 +1,7 @@
 {
   "replayOptions": {
     "segmentBuffer": 1800,
-    "outputDirectory": "//192.168.3.5/a-sexy-renderer/users/gabri/Videos/ffmpeg/replays"
+    "outputDirectory": "//192.168.2.5/a-sexy-renderer/users/gabri/Videos/ffmpeg/replays"
   },
   "commands": {
     "c_secondary": [
@@ -107,8 +107,8 @@
       "-hls_list_size",
       "12600",
       "-hls_segment_filename",
-      "\"//192.168.3.4/a-sexy-q-drive/ffmpeg/segments/c_secondary%01d.mp4\"",
-      "\"//192.168.3.4/a-sexy-q-drive/ffmpeg/segments/c_secondary.m3u8\""
+      "\"//192.168.2.4/a-sexy-q-drive/ffmpeg/segments/c_secondary%01d.mp4\"",
+      "\"//192.168.2.4/a-sexy-q-drive/ffmpeg/segments/c_secondary.m3u8\""
     ]
   }
 }

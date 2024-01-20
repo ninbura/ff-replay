@@ -44,7 +44,7 @@ function getConfig ($relativePath, $configName) {
   }
 
   if($env:computername -eq "A-SEXY-DESKTOP") {
-    $config.replayOptions.outputDirectory = $config.replayOptions.outputDirectory.replace("192.168.3.5", "192.168.2.5")
+    $config.replayOptions.outputDirectory = $config.replayOptions.outputDirectory.replace("192.168.2.5", "192.168.2.5")
   }
 
   return $config
@@ -62,7 +62,7 @@ function getSegmentDetails ($commands) {
   }
 
   if($env:computername -eq "A-SEXY-DESKTOP") {
-    $segmentDetails.segmentPath = $segmentDetails.segmentPath.replace("192.168.3.4", "192.168.2.4")
+    $segmentDetails.segmentPath = $segmentDetails.segmentPath.replace("192.168.2.4", "192.168.2.4")
   }
 
   return $segmentDetails
