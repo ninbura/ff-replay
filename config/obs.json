@@ -23,7 +23,7 @@
       "-pixel_format",
       "nv12",
       "-i",
-      "video=\"OBS Virtual Camera\":audio=\"Dante (3+4) (RME Digiface Dante USB 3.0)\"",
+      "video=\"OBS Virtual Camera\":audio=\"MADI (15+16) (RME HDSPe MADI FX)\"",
       "-map",
       "0",
       "-c:v",
