@@ -1,7 +1,7 @@
 {
   "replayOptions": {
     "segmentBuffer": 1800,
-    "outputDirectory": "//192.168.2.5/a-sexy-renderer/users/gabri/Videos/ffmpeg/replays"
+    "outputDirectory": "//192.168.2.5/server-videos/ffmpeg/replays"
   },
   "commands": {
     "b_primary": [
@@ -23,7 +23,7 @@
       "-pixel_format",
       "nv12",
       "-i",
-      "video=\"Video (00-1 Pro Capture Dual HDMI 4K+)\":audio=\"MADI (65+66) (RME HDSPe MADI FX)\"",
+      "video=\"Elgato 4K Pro\":audio=\"Elgato 4K Pro Audio\"",
       "-guess_layout_max",
       "0",
       "-thread_queue_size",

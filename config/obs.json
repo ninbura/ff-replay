@@ -1,7 +1,7 @@
 {
   "replayOptions": {
     "segmentBuffer": 1800,
-    "outputDirectory": "//192.168.2.5/a-sexy-renderer/users/gabri/Videos/ffmpeg/replays"
+    "outputDirectory": "//192.168.2.5/server-videos/ffmpeg/replays"
   },
   "commands": {
     "a_obs": [
@@ -23,7 +23,7 @@
       "-pixel_format",
       "nv12",
       "-i",
-      "video=\"OBS Virtual Camera\":audio=\"MADI (15+16) (RME HDSPe MADI FX)\"",
+      "video=\"OBS Virtual Camera\":audio=\"MADI (17+18) (RME HDSPe MADI FX)\"",
       "-map",
       "0",
       "-c:v",

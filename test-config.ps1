@@ -1,6 +1,6 @@
 param(
   $configName = "all",
-  $commandName = "a_primary"
+  $commandName = "b_primary"
 )
 
 function SetRelativePath {

@@ -1,7 +1,7 @@
 {
   "replayOptions": {
     "segmentBuffer": 1800,
-    "outputDirectory": "//192.168.2.5/a-sexy-renderer/users/gabri/Videos/ffmpeg/replays"
+    "outputDirectory": "//192.168.2.5/server-videos/ffmpeg/replays"
   },
   "commands": {
     "d_camera": [
@@ -22,6 +22,18 @@
       "nv12",
       "-i",
       "video=\"Game Capture 4K60 Pro MK.2 (2)\":audio=\"MADI (63+64) (RME HDSPe MADI FX)\"",
+      "-guess_layout_max",
+      "0",
+      "-thread_queue_size",
+      "9999",
+      "-indexmem",
+      "9999",
+      "-f",
+      "dshow",
+      "-rtbufsize",
+      "2147.48M",
+      "-i",
+      "audio=\"MADI (33+34) (RME HDSPe MADI FX)\"",
       "-guess_layout_max",
       "0",
       "-thread_queue_size",
@@ -57,7 +69,7 @@
       "-rtbufsize",
       "2147.48M",
       "-i",
-      "audio=\"MADI (27+28) (RME HDSPe MADI FX)\"",
+      "audio=\"MADI (25+26) (RME HDSPe MADI FX)\"",
       "-guess_layout_max",
       "0",
       "-thread_queue_size",
@@ -69,7 +81,7 @@
       "-rtbufsize",
       "2147.48M",
       "-i",
-      "audio=\"MADI (29+30) (RME HDSPe MADI FX)\"",
+      "audio=\"MADI (27+28) (RME HDSPe MADI FX)\"",
       "-map",
       "0",
       "-map",
@@ -80,6 +92,8 @@
       "3",
       "-map",
       "4",
+      "-map",
+      "5",
       "-c:v",
       "av1_nvenc",
       "-gpu",

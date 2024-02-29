@@ -1,6 +1,6 @@
 param(
-  [string]$relativePath = "C:/repositories/ff-replay",
-  [string]$configName = "",
+  [string]$relativePath = "C:/repos/ff-replay",
+  [string]$configName = "all",
   [string]$outputOverride = "",
   [string]$videoStreams = "",
   [string]$startTime = "",
