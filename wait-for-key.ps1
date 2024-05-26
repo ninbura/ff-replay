@@ -1,5 +1,5 @@
 param(
-  [string]$quitKey = "F16"
+  [string]$quitKey = "F24"
 )
 
 $keyLogger = @"

@@ -149,7 +149,7 @@ try {
   Write-Host "Starting recording..."
   $process = startProcesses $processInfo
   killProcesses $process $relativePath
-  Write-Host "`nCaught F16, ending recording...`n" -ForegroundColor Green
+  Write-Host "`nCaught F24, ending recording...`n" -ForegroundColor Green
   deleteSegments $config.commands
   quitOrBypass
 } catch {
