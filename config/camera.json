@@ -1,6 +1,6 @@
 {
   "replayOptions": {
-    "segmentBuffer": 1800,
+    "segmentBuffer": 900,
     "outputDirectory": "//192.168.2.5/server-videos/ffmpeg/replays"
   },
   "commands": {
@@ -105,17 +105,19 @@
       "-r",
       "60",
       "-rc-lookahead",
-      "120",
+      "50",
       "-forced-idr",
       "1",
       "-force_key_frames",
       "\"expr:gte(t,n_forced*2)\"",
       "-rc:v",
-      "vbr",
-      "-cq:v",
-      "18",
-      "-bsf:v",
-      "av1_metadata=color_range=tv",
+      "constqp",
+      "-qp:v",
+      "52",
+      "-b:v",
+      "0",
+      "-color_range",
+      "1",
       "-colorspace",
       "1",
       "-color_primaries",
@@ -147,7 +149,7 @@
       "-hls_time",
       "2",
       "-hls_list_size",
-      "12600",
+      "4500",
       "-hls_segment_filename",
       "\"//192.168.2.4/a-sexy-q-drive/ffmpeg/segments/d_camera%01d.mp4\"",
       "\"//192.168.2.4/a-sexy-q-drive/ffmpeg/segments/d_camera.m3u8\""
