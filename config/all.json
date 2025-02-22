@@ -1,7 +1,7 @@
 {
   "replayOptions": {
     "segmentBuffer": 900,
-    "outputDirectory": "//192.168.2.5/server-videos/ffmpeg/replays"
+    "outputDirectory": "//192.168.1.5/server-videos/ffmpeg/replays"
   },
   "commands": {
     "a_obs": [
@@ -29,7 +29,7 @@
       "-c:v",
       "av1_nvenc",
       "-gpu",
-      "0",
+      "1",
       "-preset",
       "p1",
       "-pix_fmt",
@@ -85,8 +85,8 @@
       "-hls_list_size",
       "4500",
       "-hls_segment_filename",
-      "\"//192.168.2.4/a-sexy-q-drive/ffmpeg/segments/a_obs%01d.mp4\"",
-      "\"//192.168.2.4/a-sexy-q-drive/ffmpeg/segments/a_obs.m3u8\""
+      "\"//192.168.1.4/a-sexy-q-drive/ffmpeg/segments/a_obs%01d.mp4\"",
+      "\"//192.168.1.4/a-sexy-q-drive/ffmpeg/segments/a_obs.m3u8\""
     ],
     "b_primary": [
       "-y",
@@ -182,8 +182,8 @@
       "-hls_list_size",
       "4500",
       "-hls_segment_filename",
-      "\"//192.168.2.4/a-sexy-q-drive/ffmpeg/segments/b_primary%01d.mp4\"",
-      "\"//192.168.2.4/a-sexy-q-drive/ffmpeg/segments/b_primary.m3u8\""
+      "\"//192.168.1.4/a-sexy-q-drive/ffmpeg/segments/b_primary%01d.mp4\"",
+      "\"//192.168.1.4/a-sexy-q-drive/ffmpeg/segments/b_primary.m3u8\""
     ],
     "c_secondary": [
       "-y",
@@ -290,8 +290,8 @@
       "-hls_list_size",
       "4500",
       "-hls_segment_filename",
-      "\"//192.168.2.4/a-sexy-q-drive/ffmpeg/segments/c_secondary%01d.mp4\"",
-      "\"//192.168.2.4/a-sexy-q-drive/ffmpeg/segments/c_secondary.m3u8\""
+      "\"//192.168.1.4/a-sexy-q-drive/ffmpeg/segments/c_secondary%01d.mp4\"",
+      "\"//192.168.1.4/a-sexy-q-drive/ffmpeg/segments/c_secondary.m3u8\""
     ],
     "d_camera": [
       "-y",
@@ -371,6 +371,18 @@
       "2147.48M",
       "-i",
       "audio=\"MADI (27+28) (RME HDSPe MADI FX)\"",
+      "-guess_layout_max",
+      "0",
+      "-thread_queue_size",
+      "9999",
+      "-indexmem",
+      "9999",
+      "-f",
+      "dshow",
+      "-rtbufsize",
+      "2147.48M",
+      "-i",
+      "audio=\"MADI (29+30) (RME HDSPe MADI FX)\"",
       "-map",
       "0",
       "-map",
@@ -383,6 +395,8 @@
       "4",
       "-map",
       "5",
+      "-map",
+      "6",
       "-c:v",
       "av1_nvenc",
       "-gpu",
@@ -440,8 +454,8 @@
       "-hls_list_size",
       "4500",
       "-hls_segment_filename",
-      "\"//192.168.2.4/a-sexy-q-drive/ffmpeg/segments/d_camera%01d.mp4\"",
-      "\"//192.168.2.4/a-sexy-q-drive/ffmpeg/segments/d_camera.m3u8\""
+      "\"//192.168.1.4/a-sexy-q-drive/ffmpeg/segments/d_camera%01d.mp4\"",
+      "\"//192.168.1.4/a-sexy-q-drive/ffmpeg/segments/d_camera.m3u8\""
     ]
   }
 }
