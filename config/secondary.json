@@ -1,7 +1,7 @@
 {
   "replayOptions": {
     "segmentBuffer": 900,
-    "outputDirectory": "//192.168.1.5/server-videos/ffmpeg/replays"
+    "outputDirectory": "//192.168.2.5/server-videos/ffmpeg/replays"
   },
   "commands": {
     "c_secondary": [
@@ -34,24 +34,10 @@
       "2147.48M",
       "-i",
       "audio=\"MADI (65+66) (RME HDSPe MADI FX)\"",
-      "-guess_layout_max",
-      "0",
-      "-thread_queue_size",
-      "9999",
-      "-indexmem",
-      "9999",
-      "-f",
-      "dshow",
-      "-rtbufsize",
-      "2147.48M",
-      "-i",
-      "audio=\"MADI (69+70) (RME HDSPe MADI FX)\"",
       "-map",
       "0",
       "-map",
       "1",
-      "-map",
-      "2",
       "-c:v",
       "av1_nvenc",
       "-gpu",
@@ -75,8 +61,6 @@
       "-b:v",
       "0",
       "-color_range",
-      "1",
-      "-colorspace",
       "1",
       "-color_primaries",
       "1",
@@ -109,8 +93,8 @@
       "-hls_list_size",
       "4500",
       "-hls_segment_filename",
-      "\"//192.168.1.4/a-sexy-q-drive/ffmpeg/segments/c_secondary%01d.mp4\"",
-      "\"//192.168.1.4/a-sexy-q-drive/ffmpeg/segments/c_secondary.m3u8\""
+      "\"//192.168.2.4/a-sexy-q-drive/ffmpeg/segments/c_secondary%01d.mp4\"",
+      "\"//192.168.2.4/a-sexy-q-drive/ffmpeg/segments/c_secondary.m3u8\""
     ]
   }
 }

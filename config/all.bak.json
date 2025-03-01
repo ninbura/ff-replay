@@ -1,7 +1,7 @@
 {
   "replayOptions": {
     "segmentBuffer": 900,
-    "outputDirectory": "//192.168.2.5/server-videos/ffmpeg/replays"
+    "outputDirectory": "//192.168.1.5/server-videos/ffmpeg/replays"
   },
   "commands": {
     "a_obs": [
@@ -50,6 +50,8 @@
       "0",
       "-color_range",
       "1",
+      "-colorspace",
+      "1",
       "-color_primaries",
       "1",
       "-color_trc",
@@ -83,8 +85,8 @@
       "-hls_list_size",
       "4500",
       "-hls_segment_filename",
-      "\"//192.168.2.4/a-sexy-q-drive/ffmpeg/segments/a_obs%01d.mp4\"",
-      "\"//192.168.2.4/a-sexy-q-drive/ffmpeg/segments/a_obs.m3u8\""
+      "\"//192.168.1.4/a-sexy-q-drive/ffmpeg/segments/a_obs%01d.mp4\"",
+      "\"//192.168.1.4/a-sexy-q-drive/ffmpeg/segments/a_obs.m3u8\""
     ],
     "b_primary": [
       "-y",
@@ -147,6 +149,8 @@
       "0",
       "-color_range",
       "1",
+      "-colorspace",
+      "1",
       "-color_primaries",
       "1",
       "-color_trc",
@@ -178,8 +182,8 @@
       "-hls_list_size",
       "4500",
       "-hls_segment_filename",
-      "\"//192.168.2.4/a-sexy-q-drive/ffmpeg/segments/b_primary%01d.mp4\"",
-      "\"//192.168.2.4/a-sexy-q-drive/ffmpeg/segments/b_primary.m3u8\""
+      "\"//192.168.1.4/a-sexy-q-drive/ffmpeg/segments/b_primary%01d.mp4\"",
+      "\"//192.168.1.4/a-sexy-q-drive/ffmpeg/segments/b_primary.m3u8\""
     ],
     "c_secondary": [
       "-y",
@@ -239,6 +243,8 @@
       "0",
       "-color_range",
       "1",
+      "-colorspace",
+      "1",
       "-color_primaries",
       "1",
       "-color_trc",
@@ -270,8 +276,8 @@
       "-hls_list_size",
       "4500",
       "-hls_segment_filename",
-      "\"//192.168.2.4/a-sexy-q-drive/ffmpeg/segments/c_secondary%01d.mp4\"",
-      "\"//192.168.2.4/a-sexy-q-drive/ffmpeg/segments/c_secondary.m3u8\""
+      "\"//192.168.1.4/a-sexy-q-drive/ffmpeg/segments/c_secondary%01d.mp4\"",
+      "\"//192.168.1.4/a-sexy-q-drive/ffmpeg/segments/c_secondary.m3u8\""
     ],
     "d_camera": [
       "-y",
@@ -331,6 +337,8 @@
       "0",
       "-color_range",
       "1",
+      "-colorspace",
+      "1",
       "-color_primaries",
       "1",
       "-color_trc",
@@ -362,8 +370,8 @@
       "-hls_list_size",
       "4500",
       "-hls_segment_filename",
-      "\"//192.168.2.4/a-sexy-q-drive/ffmpeg/segments/d_camera%01d.mp4\"",
-      "\"//192.168.2.4/a-sexy-q-drive/ffmpeg/segments/d_camera.m3u8\""
+      "\"//192.168.1.4/a-sexy-q-drive/ffmpeg/segments/d_camera%01d.mp4\"",
+      "\"//192.168.1.4/a-sexy-q-drive/ffmpeg/segments/d_camera.m3u8\""
     ],
     "e_chat": [
       "-y",
@@ -487,6 +495,8 @@
       "0",
       "-color_range",
       "1",
+      "-colorspace",
+      "1",
       "-color_primaries",
       "1",
       "-color_trc",
@@ -518,8 +528,8 @@
       "-hls_list_size",
       "4500",
       "-hls_segment_filename",
-      "\"//192.168.2.4/a-sexy-q-drive/ffmpeg/segments/e_chat%01d.mp4\"",
-      "\"//192.168.2.4/a-sexy-q-drive/ffmpeg/segments/e_chat.m3u8\""
+      "\"//192.168.1.4/a-sexy-q-drive/ffmpeg/segments/e_chat%01d.mp4\"",
+      "\"//192.168.1.4/a-sexy-q-drive/ffmpeg/segments/e_chat.m3u8\""
     ]
   }
 }

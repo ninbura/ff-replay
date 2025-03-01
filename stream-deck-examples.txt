@@ -1,30 +1,34 @@
-wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\repos\ff-replay\segment.ps1" -configName all -bypassQuit y
-wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\repos\ff-replay\segment.ps1" -configName obs -bypassQuit y
-wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\repos\ff-replay\segment.ps1" -configName primary -bypassQuit y
-wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\repos\ff-replay\segment.ps1" -configName secondary -bypassQuit y
-wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\repos\ff-replay\segment.ps1" -configName camera -bypassQuit y
+wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\Users\gabri\repos\ff-replay\segment.ps1" -configName all-no-cam -bypassQuit y
+wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\Users\gabri\repos\ff-replay\replay.ps1" -configName all-no-cam -bypassQuit y
+wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\Users\gabri\repos\ff-replay\replay.ps1" -configName all-no-cam -videoStreams "1,2,3,4" -startTime 5 -ignoreStartBounds y -replayduration 5 -ignoreEndBounds y -outputFilename replay -bypassQuit y
+wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\Users\gabri\repos\ff-replay\replay.ps1" -configName all-no-cam -videoStreams "1,2,3,4" -startTime 1 -ignoreStartBounds y -replayduration 1 -ignoreEndBounds y -outputFilename replay -bypassQuit y
 
-wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\repos\ff-replay\replay.ps1" -configName all -bypassQuit y
-wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\repos\ff-replay\replay.ps1" -configName primary-and-secondary -bypassQuit y
-wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\repos\ff-replay\replay.ps1" -configName obs -bypassQuit y
-wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\repos\ff-replay\replay.ps1" -configName primary -bypassQuit y
-wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\repos\ff-replay\replay.ps1" -configName secondary -bypassQuit y
-wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\repos\ff-replay\replay.ps1" -configName camera -bypassQuit y
+wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\Users\gabri\repos\ff-replay\segment.ps1" -configName all -bypassQuit y
+wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\Users\gabri\repos\ff-replay\replay.ps1" -configName all -bypassQuit y
+wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\Users\gabri\repos\ff-replay\replay.ps1" -configName all -videoStreams "1,2,3,4" -startTime 5 -ignoreStartBounds y -replayduration 5 -ignoreEndBounds y -outputFilename replay -bypassQuit y
+wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\Users\gabri\repos\ff-replay\replay.ps1" -configName all -videoStreams "1,2,3,4" -startTime 1 -ignoreStartBounds y -replayduration 1 -ignoreEndBounds y -outputFilename replay -bypassQuit y
 
-wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\repos\ff-replay\replay.ps1" -configName all -videoStreams "1,2,3,4" -startTime 5 -ignoreStartBounds y -replayduration 5 -ignoreEndBounds y -outputFilename replay -bypassQuit y
-wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\repos\ff-replay\replay.ps1" -configName all -videoStreams "1,2,3,4" -startTime 1 -ignoreStartBounds y -replayduration 1 -ignoreEndBounds y -outputFilename replay -bypassQuit y
+wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\Users\gabri\repos\ff-replay\segment.ps1" -configName primary-and-secondary -bypassQuit y
+wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\Users\gabri\repos\ff-replay\replay.ps1" -configName primary-and-secondary -bypassQuit y
+wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\Users\gabri\repos\ff-replay\replay.ps1" -configName primary-and-secondary -videoStreams "1,2" -startTime 5 -ignoreStartBounds y -replayduration 5 -ignoreEndBounds y -outputFilename replay -bypassQuit y
+wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\Users\gabri\repos\ff-replay\replay.ps1" -configName primary-and-secondary -videoStreams "1,2" -startTime 1 -ignoreStartBounds y -replayduration 1 -ignoreEndBounds y -outputFilename replay -bypassQuit y
 
-wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\repos\ff-replay\replay.ps1" -configName primary-and-secondary -videoStreams "1,2" -startTime 5 -ignoreStartBounds y -replayduration 5 -ignoreEndBounds y -outputFilename replay -bypassQuit y
-wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\repos\ff-replay\replay.ps1" -configName primary-and-secondary -videoStreams "1,2" -startTime 1 -ignoreStartBounds y -replayduration 1 -ignoreEndBounds y -outputFilename replay -bypassQuit y
+wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\Users\gabri\repos\ff-replay\segment.ps1" -configName obs -bypassQuit y
+wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\Users\gabri\repos\ff-replay\replay.ps1" -configName obs -bypassQuit y
+wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\Users\gabri\repos\ff-replay\replay.ps1" -configName obs -startTime 5 -ignoreStartBounds y -replayduration 5 -ignoreEndBounds y -outputFilename replay -bypassQuit y
+wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\Users\gabri\repos\ff-replay\replay.ps1" -configName obs -startTime 1 -ignoreStartBounds y -replayduration 1 -ignoreEndBounds y -outputFilename replay -bypassQuit y
 
-wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\repos\ff-replay\replay.ps1" -configName obs -startTime 5 -ignoreStartBounds y -replayduration 5 -ignoreEndBounds y -outputFilename replay -bypassQuit y
-wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\repos\ff-replay\replay.ps1" -configName obs -startTime 1 -ignoreStartBounds y -replayduration 1 -ignoreEndBounds y -outputFilename replay -bypassQuit y
+wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\Users\gabri\repos\ff-replay\segment.ps1" -configName primary -bypassQuit y
+wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\Users\gabri\repos\ff-replay\replay.ps1" -configName primary -bypassQuit y
+wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\Users\gabri\repos\ff-replay\replay.ps1" -configName primary -startTime 5 -ignoreStartBounds y -replayduration 5 -ignoreEndBounds y -outputFilename replay -bypassQuit y
+wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\Users\gabri\repos\ff-replay\replay.ps1" -configName primary -startTime 1 -ignoreStartBounds y -replayduration 1 -ignoreEndBounds y -outputFilename replay -bypassQuit y
 
-wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\repos\ff-replay\replay.ps1" -configName primary -startTime 5 -ignoreStartBounds y -replayduration 5 -ignoreEndBounds y -outputFilename replay -bypassQuit y
-wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\repos\ff-replay\replay.ps1" -configName primary -startTime 1 -ignoreStartBounds y -replayduration 1 -ignoreEndBounds y -outputFilename replay -bypassQuit y
+wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\Users\gabri\repos\ff-replay\segment.ps1" -configName secondary -bypassQuit y
+wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\Users\gabri\repos\ff-replay\replay.ps1" -configName secondary -bypassQuit y
+wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\Users\gabri\repos\ff-replay\replay.ps1" -configName secondary -startTime 5 -ignoreStartBounds y -replayduration 5 -ignoreEndBounds y -outputFilename replay -bypassQuit y
+wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\Users\gabri\repos\ff-replay\replay.ps1" -configName secondary -startTime 1 -ignoreStartBounds y -replayduration 1 -ignoreEndBounds y -outputFilename replay -bypassQuit y
 
-wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\repos\ff-replay\replay.ps1" -configName secondary -startTime 5 -ignoreStartBounds y -replayduration 5 -ignoreEndBounds y -outputFilename replay -bypassQuit y
-wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\repos\ff-replay\replay.ps1" -configName secondary -startTime 1 -ignoreStartBounds y -replayduration 1 -ignoreEndBounds y -outputFilename replay -bypassQuit y
-
-wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\repos\ff-replay\replay.ps1" -configName camera -startTime 5 -ignoreStartBounds y -replayduration 5 -ignoreEndBounds y -outputFilename replay -bypassQuit y
-wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\repos\ff-replay\replay.ps1" -configName camera -startTime 1 -ignoreStartBounds y -replayduration 1 -ignoreEndBounds y -outputFilename replay -bypassQuit y
+wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\Users\gabri\repos\ff-replay\segment.ps1" -configName camera-and-chat -bypassQuit y
+wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\Users\gabri\repos\ff-replay\replay.ps1" -configName camera-and-chat -bypassQuit y
+wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\Users\gabri\repos\ff-replay\replay.ps1" -configName camera-and-chat -startTime 5 -ignoreStartBounds y -replayduration 5 -ignoreEndBounds y -outputFilename replay -bypassQuit y
+wt pwsh -ExecutionPolicy bypass -WindowStyle normal -file "C:\Users\gabri\repos\ff-replay\replay.ps1" -configName camera-and-chat -startTime 1 -ignoreStartBounds y -replayduration 1 -ignoreEndBounds y -outputFilename replay -bypassQuit y
