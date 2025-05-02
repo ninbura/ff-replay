@@ -1,7 +1,7 @@
 {
     "replayOptions": {
       "segmentBuffer": 900,
-      "outputDirectory": "//192.168.2.5/server-videos/ffmpeg/replays"
+      "outputDirectory": "//192.168.2.4/a-sexy-retard/ffmpeg/replays"
     },
     "commands": {
       "a_obs": [
