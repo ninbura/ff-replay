@@ -1,7 +1,7 @@
 {
   "replayOptions": {
     "segmentBuffer": 900,
-    "outputDirectory": "//192.168.2.5/server-videos/ffmpeg/replays"
+    "outputDirectory": "//192.168.2.4/a-sexy-r-drive/ffmpeg/replays"
   },
   "commands": {
     "b_primary": [
@@ -42,7 +42,7 @@
       "-c:v",
       "av1_nvenc",
       "-gpu",
-      "1",
+      "0",
       "-preset",
       "p1",
       "-pix_fmt",

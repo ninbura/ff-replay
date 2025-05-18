@@ -1,7 +1,7 @@
 {
   "replayOptions": {
     "segmentBuffer": 900,
-    "outputDirectory": "//192.168.2.5/server-videos/ffmpeg/replays"
+    "outputDirectory": "//192.168.2.4/a-sexy-r-drive/ffmpeg/replays"
   },
   "commands": {
     "b_primary": [
@@ -42,7 +42,7 @@
       "-c:v",
       "av1_nvenc",
       "-gpu",
-      "1",
+      "0",
       "-preset",
       "p1",
       "-pix_fmt",
@@ -116,7 +116,7 @@
       "-pixel_format",
       "nv12",
       "-i",
-      "video=\"Game Capture 4K60 Pro MK.2\":audio=\"Game Capture 4K60 Pro MK.2 Audio\"",
+      "video=\"Elgato 4K Pro\":audio=\"Elgato 4K Pro Audio\"",
       "-guess_layout_max",
       "0",
       "-thread_queue_size",
@@ -136,7 +136,7 @@
       "-c:v",
       "av1_nvenc",
       "-gpu",
-      "1",
+      "0",
       "-preset",
       "p1",
       "-pix_fmt",

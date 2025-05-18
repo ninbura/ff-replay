@@ -1,7 +1,7 @@
 {
   "replayOptions": {
     "segmentBuffer": 900,
-    "outputDirectory": "//192.168.2.5/server-videos/ffmpeg/replays"
+    "outputDirectory": "//192.168.2.4/a-sexy-r-drive/ffmpeg/replays"
   },
   "commands": {
     "a_obs": [
@@ -17,19 +17,19 @@
       "-rtbufsize",
       "2147.48M",
       "-video_size",
-      "3840x2160",
+      "2560x1440",
       "-framerate",
       "60",
       "-pixel_format",
       "nv12",
       "-i",
-      "video=\"OBS Virtual Camera\":audio=\"MADI (17+18) (RME HDSPe MADI FX)\"",
+      "video=\"OBS Virtual Camera\":audio=\"MADI (15+16) (RME HDSPe MADI FX)\"",
       "-map",
       "0",
       "-c:v",
       "av1_nvenc",
       "-gpu",
-      "1",
+      "0",
       "-preset",
       "p1",
       "-pix_fmt",

@@ -1,5 +1,5 @@
 param(
-  $configName = "all",
+  $configName = "all-no-prim-or-cam",
   $commandName = "a_obs"
 )
 
